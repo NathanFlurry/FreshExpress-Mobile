@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Alamofire
 
 class Server {
 	static let serverAddress = "http://localhost:8080/"
