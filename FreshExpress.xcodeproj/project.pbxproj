@@ -8,20 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		BF2219E61D427F0A00FA40A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2219E51D427F0A00FA40A3 /* AppDelegate.swift */; };
-		BF2219E81D427F0A00FA40A3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2219E71D427F0A00FA40A3 /* ViewController.swift */; };
 		BF2219EB1D427F0A00FA40A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF2219E91D427F0A00FA40A3 /* Main.storyboard */; };
 		BF2219ED1D427F0A00FA40A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF2219EC1D427F0A00FA40A3 /* Assets.xcassets */; };
 		BF2219F01D427F0A00FA40A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF2219EE1D427F0A00FA40A3 /* LaunchScreen.storyboard */; };
+		BF2C3CE61D42C1F300584921 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2C3CE51D42C1F300584921 /* MapViewController.swift */; };
+		BF2C3CE81D42C1FB00584921 /* FoodsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2C3CE71D42C1FB00584921 /* FoodsViewController.swift */; };
+		BF2C3CEA1D42C21800584921 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2C3CE91D42C21800584921 /* ScheduleViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		BF2219E21D427F0A00FA40A3 /* FreshExpress.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FreshExpress.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF2219E51D427F0A00FA40A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BF2219E71D427F0A00FA40A3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BF2219EA1D427F0A00FA40A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BF2219EC1D427F0A00FA40A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BF2219EF1D427F0A00FA40A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BF2219F11D427F0A00FA40A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF2C3CE51D42C1F300584921 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		BF2C3CE71D42C1FB00584921 /* FoodsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodsViewController.swift; sourceTree = "<group>"; };
+		BF2C3CE91D42C21800584921 /* ScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,11 +59,13 @@
 			isa = PBXGroup;
 			children = (
 				BF2219E51D427F0A00FA40A3 /* AppDelegate.swift */,
-				BF2219E71D427F0A00FA40A3 /* ViewController.swift */,
 				BF2219E91D427F0A00FA40A3 /* Main.storyboard */,
 				BF2219EC1D427F0A00FA40A3 /* Assets.xcassets */,
 				BF2219EE1D427F0A00FA40A3 /* LaunchScreen.storyboard */,
 				BF2219F11D427F0A00FA40A3 /* Info.plist */,
+				BF2C3CE51D42C1F300584921 /* MapViewController.swift */,
+				BF2C3CE71D42C1FB00584921 /* FoodsViewController.swift */,
+				BF2C3CE91D42C21800584921 /* ScheduleViewController.swift */,
 			);
 			path = FreshExpress;
 			sourceTree = "<group>";
@@ -138,8 +144,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF2219E81D427F0A00FA40A3 /* ViewController.swift in Sources */,
+				BF2C3CE81D42C1FB00584921 /* FoodsViewController.swift in Sources */,
 				BF2219E61D427F0A00FA40A3 /* AppDelegate.swift in Sources */,
+				BF2C3CE61D42C1F300584921 /* MapViewController.swift in Sources */,
+				BF2C3CEA1D42C21800584921 /* ScheduleViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,6 +305,7 @@
 				BF2219F61D427F0A00FA40A3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
