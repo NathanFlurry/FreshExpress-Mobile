@@ -14,6 +14,7 @@
 		BF2C3CE61D42C1F300584921 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2C3CE51D42C1F300584921 /* MapViewController.swift */; };
 		BF2C3CE81D42C1FB00584921 /* FoodsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2C3CE71D42C1FB00584921 /* FoodsViewController.swift */; };
 		BF2C3CEA1D42C21800584921 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2C3CE91D42C21800584921 /* ScheduleViewController.swift */; };
+		BF2C3CEC1D42C56600584921 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2C3CEB1D42C56600584921 /* Server.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		BF2C3CE51D42C1F300584921 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		BF2C3CE71D42C1FB00584921 /* FoodsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodsViewController.swift; sourceTree = "<group>"; };
 		BF2C3CE91D42C21800584921 /* ScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
+		BF2C3CEB1D42C56600584921 /* Server.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,15 +61,24 @@
 			isa = PBXGroup;
 			children = (
 				BF2219E51D427F0A00FA40A3 /* AppDelegate.swift */,
+				BF2C3CEB1D42C56600584921 /* Server.swift */,
+				BF2C3CED1D42C56D00584921 /* View Controllers */,
 				BF2219E91D427F0A00FA40A3 /* Main.storyboard */,
 				BF2219EC1D427F0A00FA40A3 /* Assets.xcassets */,
 				BF2219EE1D427F0A00FA40A3 /* LaunchScreen.storyboard */,
 				BF2219F11D427F0A00FA40A3 /* Info.plist */,
+			);
+			path = FreshExpress;
+			sourceTree = "<group>";
+		};
+		BF2C3CED1D42C56D00584921 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
 				BF2C3CE51D42C1F300584921 /* MapViewController.swift */,
 				BF2C3CE71D42C1FB00584921 /* FoodsViewController.swift */,
 				BF2C3CE91D42C21800584921 /* ScheduleViewController.swift */,
 			);
-			path = FreshExpress;
+			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,6 +155,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF2C3CEC1D42C56600584921 /* Server.swift in Sources */,
 				BF2C3CE81D42C1FB00584921 /* FoodsViewController.swift in Sources */,
 				BF2219E61D427F0A00FA40A3 /* AppDelegate.swift in Sources */,
 				BF2C3CE61D42C1F300584921 /* MapViewController.swift in Sources */,
