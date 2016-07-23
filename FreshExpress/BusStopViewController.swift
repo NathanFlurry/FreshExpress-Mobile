@@ -9,7 +9,9 @@
 import UIKit
 import MapKit
 
-class BusStopViewController: UIViewController, CLLocationManagerDelegate {
+class BusStopViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
+	let pinReuseId = "Pin"
+	
 	@IBOutlet weak var titleLabel: UILabel!
 	@IBOutlet weak var addressLabel: UILabel!
 	@IBOutlet weak var distanceLabel: UILabel!
@@ -29,6 +31,9 @@ class BusStopViewController: UIViewController, CLLocationManagerDelegate {
 		locationManager.delegate = self
 		locationManager.requestWhenInUseAuthorization()
 		locationManager.startUpdatingLocation()
+		
+		// Set map delegate
+		mapView.delegate = self
 		
         // Clear UI
 		titleLabel.text = ""
@@ -69,6 +74,21 @@ class BusStopViewController: UIViewController, CLLocationManagerDelegate {
 			// Get the MKPlacemark
 			self.placemark = MKPlacemark(placemark: clPlacemark)
 			
+			// Create the annotation
+			let annotation = MKPointAnnotation()
+			annotation.coordinate = self.placemark!.coordinate
+			
+			// Add the annotation
+			self.mapView.addAnnotation(annotation)
+			
+			// Focus on the pin
+			self.mapView.region = self.mapView.regionThatFits(
+				MKCoordinateRegion(
+					center: self.placemark!.coordinate,
+					span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
+				)
+			)
+			
 			// Enable directions button
 			self.directionsButton.isEnabled = true
 			
@@ -78,11 +98,22 @@ class BusStopViewController: UIViewController, CLLocationManagerDelegate {
 	}
 	
 	func updateDistance() {
+		// Update the distance label text
 		if let userLocation = userLocation, let placemark = placemark {
 			let placemarkLocation = CLLocation(latitude: placemark.coordinate.latitude, longitude: placemark.coordinate.longitude)
 			let distance = userLocation.distance(from: placemarkLocation) * 0.000621371 // Distance converted from meters to miles
 			distanceLabel.text = String(format: "%.1f", distance) + " miles"
 		}
+	}
+	
+	func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+		// Create the annotation
+		let annotation = // Dequeue or create new annotation view
+			mapView.dequeueReusableAnnotationView(withIdentifier: pinReuseId) as? MKPinAnnotationView ??
+				MKPinAnnotationView(annotation: annotation, reuseIdentifier: pinReuseId)
+		annotation.pinTintColor = ThemeColor
+		
+		return annotation
 	}
 	
 	// MARK: Location manager

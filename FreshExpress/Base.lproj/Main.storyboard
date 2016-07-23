@@ -91,11 +91,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" mapType="standard" zoomEnabled="NO" scrollEnabled="NO" rotateEnabled="NO" pitchEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pH4-Tj-50K"/>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tNJ-H3-e9g" customClass="RoundButton" customModule="FreshExpress" customModuleProvider="target">
                                 <color key="backgroundColor" red="0.10588235294117647" green="0.6705882352941176" blue="0.6470588235294118" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="tNJ-H3-e9g" secondAttribute="height" multiplier="1:1" id="EDl-hQ-MP6"/>
-                                    <constraint firstAttribute="width" constant="68" id="b75-jG-8Zj"/>
+                                    <constraint firstAttribute="width" constant="62" id="b75-jG-8Zj"/>
                                 </constraints>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" image="Directions"/>
@@ -103,21 +104,21 @@
                                     <action selector="getDirections:" destination="4x8-NE-yDF" eventType="touchUpInside" id="jdi-Gt-sKQ"/>
                                 </connections>
                             </button>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="pH4-Tj-50K">
-                                <frame key="frameInset" minY="180" width="375" height="487"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="auK-wA-Zz4" firstAttribute="top" secondItem="FaS-b7-2Y4" secondAttribute="bottom" constant="8" id="8K6-vQ-O9b"/>
                             <constraint firstItem="FaS-b7-2Y4" firstAttribute="top" secondItem="Emh-Uf-mwT" secondAttribute="bottom" constant="8" id="9Qv-2a-T0d"/>
                             <constraint firstItem="Emh-Uf-mwT" firstAttribute="top" secondItem="j8N-p9-ubL" secondAttribute="bottom" constant="8" id="9Zy-VB-dzm"/>
+                            <constraint firstItem="pH4-Tj-50K" firstAttribute="top" secondItem="iFT-Vy-Xx6" secondAttribute="top" constant="180" id="Afd-pe-Kky"/>
+                            <constraint firstItem="pH4-Tj-50K" firstAttribute="top" secondItem="tNJ-H3-e9g" secondAttribute="bottom" constant="8" id="DNZ-dv-dBW"/>
                             <constraint firstItem="auK-wA-Zz4" firstAttribute="leading" secondItem="iFT-Vy-Xx6" secondAttribute="leadingMargin" id="HPE-v9-jcM"/>
                             <constraint firstItem="Emh-Uf-mwT" firstAttribute="leading" secondItem="iFT-Vy-Xx6" secondAttribute="leadingMargin" id="ImT-El-ZZe"/>
+                            <constraint firstAttribute="bottom" secondItem="pH4-Tj-50K" secondAttribute="bottom" id="Sr9-1t-HHh"/>
                             <constraint firstItem="FaS-b7-2Y4" firstAttribute="leading" secondItem="iFT-Vy-Xx6" secondAttribute="leadingMargin" id="T2f-hL-sDK"/>
-                            <constraint firstItem="tNJ-H3-e9g" firstAttribute="top" secondItem="j8N-p9-ubL" secondAttribute="bottom" constant="24" id="aNo-Pp-RuN"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="tNJ-H3-e9g" secondAttribute="trailing" id="u7V-Tk-MSF"/>
+                            <constraint firstItem="pH4-Tj-50K" firstAttribute="leading" secondItem="iFT-Vy-Xx6" secondAttribute="leading" id="W3i-gL-Cob"/>
+                            <constraint firstItem="tNJ-H3-e9g" firstAttribute="trailing" secondItem="iFT-Vy-Xx6" secondAttribute="trailingMargin" id="XAV-I4-Ws4"/>
+                            <constraint firstAttribute="trailing" secondItem="pH4-Tj-50K" secondAttribute="trailing" id="luX-Cp-AYL"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Bus Stop" id="08N-B8-0d1"/>
@@ -192,9 +193,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" showsUserLocation="YES" showsScale="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Esk-px-s4h">
-                                <frame key="frameInset" width="375"/>
-                            </mapView>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" showsScale="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Esk-px-s4h"/>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -239,7 +238,7 @@
         <scene sceneID="g11-SW-S3h">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="t3C-xD-JvM" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Map" id="Q7O-Qb-2if"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="Map" id="Q7O-Qb-2if"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="W3e-9D-F8i">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -258,7 +257,7 @@
         <scene sceneID="Fj4-ra-Zrc">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="IHi-6l-eeY" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Schedule" id="rMk-nc-5ih"/>
+                    <tabBarItem key="tabBarItem" title="Schedule" image="Schedule" id="rMk-nc-5ih"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="N9i-rT-nPR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -277,7 +276,7 @@
         <scene sceneID="yIL-w5-Qcm">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="L4u-0T-bRu" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Foods" id="TM6-Mg-El4"/>
+                    <tabBarItem key="tabBarItem" title="Foods" image="Apple" id="TM6-Mg-El4"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="vxp-jJ-Snn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -294,7 +293,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Apple" width="50" height="50"/>
         <image name="Directions" width="40" height="40"/>
+        <image name="Map" width="50" height="50"/>
+        <image name="Schedule" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="GtI-93-k6b"/>

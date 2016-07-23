@@ -30,7 +30,15 @@ class ScheduleItem {
 }
 
 class FoodItem {
+	var id: Int
+	var name: String
+	var cost: Float
 	
+	init(serialized: [String: AnyObject]) throws {
+		id = try (serialized["Id"] as? Int).unwrap("Id")
+		name = try (serialized["Name"] as? String).unwrap("Name")
+		cost = try (serialized["Cost"] as? Float).unwrap("Cost")
+	}
 }
 
 class BusStop {
@@ -130,6 +138,33 @@ class Server {
 					// Map the schedule and call the handler
 					let stop = try BusStop(serialized: item)
 					handler(.success(stop))
+				case .failure(let error):
+					throw error
+				}
+			} catch {
+				handler(.error(error))
+			}
+		}
+	}
+	
+	static func getFoods(handler: ServerCallback<[FoodItem]>) {
+		request(.GET, "\(serverAddress)/foods").responseJSON { response in
+			do {
+				switch response.result {
+				case .success(let value):
+					// Cast to JSON
+					guard let json = value as? [String: AnyObject] else {
+						throw ServerError.invalidData(value)
+					}
+					
+					// Get the items
+					guard let items = json["foods"] as? [[String: AnyObject]] else {
+						throw ServerError.missingValue("foods")
+					}
+					
+					// Map the schedule and call the handler
+					let foods = try items.map { try FoodItem(serialized: $0) }
+					handler(.success(foods))
 				case .failure(let error):
 					throw error
 				}
