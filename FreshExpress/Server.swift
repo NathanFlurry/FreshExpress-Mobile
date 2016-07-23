@@ -69,6 +69,67 @@ class Server {
 //	}()
 	
 	// MARK: Endpoints
+	static func getGpsInsightToken(handler: ServerCallback<String>) {
+		// Get the token
+		request(.GET, "https://api.gpsinsight.com/v2/userauth/login?username=fresh_api&app_token=57925fb8ef075").responseJSON { response in
+			do {
+				switch response.result {
+				case .success(let value):
+					// Cast to JSON
+					guard let json = value as? [String: AnyObject] else {
+						throw ServerError.invalidData(value)
+					}
+					
+					// Get the items
+					guard let data = json["data"] as? [String: AnyObject], let token = data["token"] as? String else {
+						throw ServerError.missingValue("items or token")
+					}
+					
+					handler(.success(token))
+				case .failure(let error):
+					throw error
+				}
+			} catch {
+				handler(.error(error))
+			}
+		}
+	}
+	
+	static func getVehicleLocation(handler: ServerCallback<(Float, Float)>) {
+		getGpsInsightToken { response in
+			switch response {
+			case .success(let token):
+				request(.GET, "https://api.gpsinsight.com/v2/vehicle/location?token=\(token)").responseJSON { response in
+					do {
+						switch response.result {
+						case .success(let value):
+							// Cast to JSON
+							guard let json = value as? [String: AnyObject] else {
+								throw ServerError.invalidData(value)
+							}
+							
+							// Get the items
+							guard let data = json["data"] as? [[String: AnyObject]],
+								let lat = data[0]["latitude"] as? Float,
+								let long = data[0]["longitude"] as? Float else {
+								throw ServerError.missingValue("items")
+							}
+							
+							// Map the schedule and call the handler
+							handler(.success((lat, long)))
+						case .failure(let error):
+							throw error
+						}
+					} catch {
+						handler(.error(error))
+					}
+				}
+			case .error(let error):
+				handler(.error(error))
+			}
+		}
+	}
+	
 	static func getSchedule(handler: ServerCallback<[ScheduleItem]>) {
 		request(.GET, "\(serverAddress)/schedule").responseJSON { response in
 			do {
