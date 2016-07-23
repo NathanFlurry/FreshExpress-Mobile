@@ -11,6 +11,8 @@
 		BF2219EB1D427F0A00FA40A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF2219E91D427F0A00FA40A3 /* Main.storyboard */; };
 		BF2219ED1D427F0A00FA40A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF2219EC1D427F0A00FA40A3 /* Assets.xcassets */; };
 		BF2219F01D427F0A00FA40A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF2219EE1D427F0A00FA40A3 /* LaunchScreen.storyboard */; };
+		BF2427181D43B1800057DA4D /* TractorSmoke.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF2427161D43B1800057DA4D /* TractorSmoke.sks */; };
+		BF2427191D43B1800057DA4D /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = BF2427171D43B1800057DA4D /* spark.png */; };
 		BF2430641D43875F00FA4CDC /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2430631D43875F00FA4CDC /* CartViewController.swift */; };
 		BF2C3CE61D42C1F300584921 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2C3CE51D42C1F300584921 /* MapViewController.swift */; };
 		BF2C3CE81D42C1FB00584921 /* FoodsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2C3CE71D42C1FB00584921 /* FoodsViewController.swift */; };
@@ -19,7 +21,10 @@
 		BF2C3D061D42C68200584921 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF2C3CF91D42C67B00584921 /* Alamofire.framework */; };
 		BF2C3D071D42C68200584921 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BF2C3CF91D42C67B00584921 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BF2C3D0C1D42CA1E00584921 /* Magic.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2C3D0B1D42CA1E00584921 /* Magic.swift */; };
+		BF81D4661D43AF70003BBFD4 /* FreshExpressScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF81D4651D43AF70003BBFD4 /* FreshExpressScene.sks */; };
 		BF86B2661D43577C000A3926 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF86B2651D43577C000A3926 /* RoundButton.swift */; };
+		BF87B0C81D43B234003070C9 /* AnimatedTractorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF87B0C71D43B234003070C9 /* AnimatedTractorView.swift */; };
+		BF87B0D21D43B913003070C9 /* AnimatedTractorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF87B0D11D43B913003070C9 /* AnimatedTractorViewController.swift */; };
 		BFE582A91D432BE500720FC1 /* BusStopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE582A81D432BE500720FC1 /* BusStopViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -103,6 +108,8 @@
 		BF2219EC1D427F0A00FA40A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BF2219EF1D427F0A00FA40A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BF2219F11D427F0A00FA40A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF2427161D43B1800057DA4D /* TractorSmoke.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TractorSmoke.sks; sourceTree = "<group>"; };
+		BF2427171D43B1800057DA4D /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 		BF2430631D43875F00FA4CDC /* CartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		BF2C3CE51D42C1F300584921 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		BF2C3CE71D42C1FB00584921 /* FoodsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodsViewController.swift; sourceTree = "<group>"; };
@@ -110,7 +117,10 @@
 		BF2C3CEB1D42C56600584921 /* Server.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
 		BF2C3CEE1D42C67B00584921 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "Alamofire-swift3/Alamofire.xcodeproj"; sourceTree = "<group>"; };
 		BF2C3D0B1D42CA1E00584921 /* Magic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Magic.swift; sourceTree = "<group>"; };
+		BF81D4651D43AF70003BBFD4 /* FreshExpressScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FreshExpressScene.sks; sourceTree = "<group>"; };
 		BF86B2651D43577C000A3926 /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
+		BF87B0C71D43B234003070C9 /* AnimatedTractorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatedTractorView.swift; sourceTree = "<group>"; };
+		BF87B0D11D43B913003070C9 /* AnimatedTractorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatedTractorViewController.swift; sourceTree = "<group>"; };
 		BFE582A81D432BE500720FC1 /* BusStopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusStopViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -151,6 +161,7 @@
 				BF2C3D0B1D42CA1E00584921 /* Magic.swift */,
 				BF2C3CED1D42C56D00584921 /* View Controllers */,
 				BF86B26D1D43577F000A3926 /* Views */,
+				BF81D45E1D43AF50003BBFD4 /* Animation */,
 				BF2219E91D427F0A00FA40A3 /* Main.storyboard */,
 				BF2219EC1D427F0A00FA40A3 /* Assets.xcassets */,
 				BF2219EE1D427F0A00FA40A3 /* LaunchScreen.storyboard */,
@@ -183,6 +194,18 @@
 				BF2C3D051D42C67B00584921 /* Alamofire.framework */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		BF81D45E1D43AF50003BBFD4 /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				BF87B0D11D43B913003070C9 /* AnimatedTractorViewController.swift */,
+				BF87B0C71D43B234003070C9 /* AnimatedTractorView.swift */,
+				BF81D4651D43AF70003BBFD4 /* FreshExpressScene.sks */,
+				BF2427161D43B1800057DA4D /* TractorSmoke.sks */,
+				BF2427171D43B1800057DA4D /* spark.png */,
+			);
+			name = Animation;
 			sourceTree = "<group>";
 		};
 		BF86B26D1D43577F000A3926 /* Views */ = {
@@ -314,7 +337,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF81D4661D43AF70003BBFD4 /* FreshExpressScene.sks in Resources */,
+				BF2427191D43B1800057DA4D /* spark.png in Resources */,
 				BF2219F01D427F0A00FA40A3 /* LaunchScreen.storyboard in Resources */,
+				BF2427181D43B1800057DA4D /* TractorSmoke.sks in Resources */,
 				BF2219ED1D427F0A00FA40A3 /* Assets.xcassets in Resources */,
 				BF2219EB1D427F0A00FA40A3 /* Main.storyboard in Resources */,
 			);
@@ -329,11 +355,13 @@
 			files = (
 				BF86B2661D43577C000A3926 /* RoundButton.swift in Sources */,
 				BF2C3CEC1D42C56600584921 /* Server.swift in Sources */,
+				BF87B0D21D43B913003070C9 /* AnimatedTractorViewController.swift in Sources */,
 				BFE582A91D432BE500720FC1 /* BusStopViewController.swift in Sources */,
 				BF2C3D0C1D42CA1E00584921 /* Magic.swift in Sources */,
 				BF2C3CE81D42C1FB00584921 /* FoodsViewController.swift in Sources */,
 				BF2219E61D427F0A00FA40A3 /* AppDelegate.swift in Sources */,
 				BF2C3CE61D42C1F300584921 /* MapViewController.swift in Sources */,
+				BF87B0C81D43B234003070C9 /* AnimatedTractorView.swift in Sources */,
 				BF2430641D43875F00FA4CDC /* CartViewController.swift in Sources */,
 				BF2C3CEA1D42C21800584921 /* ScheduleViewController.swift in Sources */,
 			);

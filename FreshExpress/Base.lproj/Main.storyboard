@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11173.2" systemVersion="16A254g" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="k3N-ZD-Rvj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11173.2" systemVersion="16A254g" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="m7s-Zl-zDc">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11143.2"/>
@@ -360,6 +360,48 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jye-gm-rDY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="223.19999999999999" y="-587.85607196401804"/>
+        </scene>
+        <!--Animated Tractor View Controller-->
+        <scene sceneID="4oW-G7-8Ry">
+            <objects>
+                <viewController id="m7s-Zl-zDc" customClass="AnimatedTractorViewController" customModule="FreshExpress" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yK5-fu-3S3"/>
+                        <viewControllerLayoutGuide type="bottom" id="hYG-Kj-tcM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0as-zK-FJd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="inC-Ud-SLa" customClass="AnimatedTractorView" customModule="FreshExpress" customModuleProvider="target">
+                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gWL-zD-Ptv">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="0rQ-ik-i2D"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <state key="normal" title="Continue"/>
+                                <connections>
+                                    <segue destination="k3N-ZD-Rvj" kind="show" id="Heh-DB-O6t"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="inC-Ud-SLa" secondAttribute="trailing" id="4SL-GX-Vun"/>
+                            <constraint firstItem="hYG-Kj-tcM" firstAttribute="top" secondItem="inC-Ud-SLa" secondAttribute="bottom" id="96i-6E-zkO"/>
+                            <constraint firstItem="inC-Ud-SLa" firstAttribute="leading" secondItem="0as-zK-FJd" secondAttribute="leading" id="BUF-bB-BeZ"/>
+                            <constraint firstItem="gWL-zD-Ptv" firstAttribute="leading" secondItem="0as-zK-FJd" secondAttribute="leading" id="Gsw-oF-7TU"/>
+                            <constraint firstAttribute="trailing" secondItem="gWL-zD-Ptv" secondAttribute="trailing" id="d3r-Y7-fyD"/>
+                            <constraint firstItem="inC-Ud-SLa" firstAttribute="top" secondItem="0as-zK-FJd" secondAttribute="top" id="h4d-8k-Anp"/>
+                            <constraint firstItem="hYG-Kj-tcM" firstAttribute="top" secondItem="gWL-zD-Ptv" secondAttribute="bottom" id="ktN-Nh-RCy"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9m2-mz-roE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2426.4000000000001" y="71.514242878560722"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="jJu-Un-O2n">
