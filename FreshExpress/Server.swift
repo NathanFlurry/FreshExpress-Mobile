@@ -95,7 +95,7 @@ class Server {
 		}
 	}
 	
-	static func getVehicleLocation(handler: ServerCallback<(Float, Float)>) {
+	static func getVehicleLocation(handler: ServerCallback<(Double, Double)>) {
 		getGpsInsightToken { response in
 			switch response {
 			case .success(let token):
@@ -110,8 +110,8 @@ class Server {
 							
 							// Get the items
 							guard let data = json["data"] as? [[String: AnyObject]],
-								let lat = data[0]["latitude"] as? Float,
-								let long = data[0]["longitude"] as? Float else {
+								let lat = data[0]["latitude"] as? Double,
+								let long = data[0]["longitude"] as? Double else {
 								throw ServerError.missingValue("items")
 							}
 							

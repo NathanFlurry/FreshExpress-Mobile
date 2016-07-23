@@ -9,8 +9,13 @@
 import UIKit
 import MapKit
 
+class BusAnnotation: MKPointAnnotation {
+	
+}
+
 class MapViewController: UIViewController, MKMapViewDelegate {
 	let pinReuseId = "Pin"
+	let busReuseId = "Bus"
 	
 	@IBOutlet weak var mapView: MKMapView!
 
@@ -22,8 +27,26 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+		// Set the delegate
 		mapView.delegate = self
 		
+		// Load the bus location
+		Server.getVehicleLocation { response in
+			switch response {
+			case .success(let data):
+				// Create the annotation
+				let annotation = BusAnnotation()
+				annotation.coordinate = CLLocationCoordinate2D(latitude: data.0, longitude: data.1)
+				annotation.title = "The Magic Food Bus"
+				
+				// Add the annotation
+				self.mapView.addAnnotation(annotation)
+			case .error(let error):
+				print("Could not get vehicle location because of error \(error)")
+			}
+		}
+		
+		// Load the items
         loadItems()
     }
 	
@@ -84,23 +107,34 @@ class MapViewController: UIViewController, MKMapViewDelegate {
 	
 	// MARK: Map view
 	func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-		// Create the annotation
-		let annotation = // Dequeue or create new annotation view
-			mapView.dequeueReusableAnnotationView(withIdentifier: pinReuseId) as? MKPinAnnotationView ??
-			MKPinAnnotationView(annotation: annotation, reuseIdentifier: pinReuseId)
-		annotation.pinTintColor = ThemeColor
-		annotation.canShowCallout = true
+		// Make sure it's not the user's location pin
+		guard !(annotation is MKUserLocation) else {
+			return nil
+		}
 		
-		// Create the accessory
-		let button = UIButton(type: .detailDisclosure)
-		button.frame = CGRect(x: 0, y: 0, width: 23, height: 23)
-		button.contentVerticalAlignment = .center
-		button.contentHorizontalAlignment = .center
-		
-		// Set the accessory
-		annotation.rightCalloutAccessoryView = button
-		
-		return annotation
+		if annotation is BusAnnotation { // Is a bus pin
+			let annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: busReuseId)
+			annotationView.canShowCallout = true
+			annotationView.image = UIImage(named: "Bus")
+			return annotationView
+		} else { // Is a bus stop pin
+			let annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: pinReuseId) as? MKPinAnnotationView ??
+					MKPinAnnotationView(annotation: annotation, reuseIdentifier: pinReuseId)
+			annotationView.pinTintColor = ThemeColor
+			annotationView.canShowCallout = true
+			annotationView.animatesDrop = true
+			
+			// Create the accessory
+			let button = UIButton(type: .detailDisclosure)
+			button.frame = CGRect(x: 0, y: 0, width: 23, height: 23)
+			button.contentVerticalAlignment = .center
+			button.contentHorizontalAlignment = .center
+			
+			// Set the accessory
+			annotationView.rightCalloutAccessoryView = button
+			
+			return annotationView
+		}
 	}
 	
 	func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
