@@ -114,5 +114,4 @@ class ScheduleViewController: UITableViewController {
 		
 		return cell
 	}
-
 }
