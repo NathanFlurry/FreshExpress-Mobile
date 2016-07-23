@@ -98,12 +98,18 @@ class ScheduleViewController: UITableViewController {
 		// Get the data
 		let item = items[indexPath.section][indexPath.row]
 		
+		// Get the stop
+		guard let stop = item.stop else {
+			print("No bus stop.")
+			return cell
+		}
+		
 		// Process the dates
 		let start = timeFormatter.string(from: item.startDate)
 		let end = timeFormatter.string(from: item.endDate)
 		
 		// Update the cell
-		cell.textLabel?.text = "\(indexPath)" // TODO: Get the stop info
+		cell.textLabel?.text = "\(stop.locationName) @ \(stop.address)" // TODO: Get the stop info
 		cell.detailTextLabel?.text = "From \(start) until \(end)"
 		
 		return cell

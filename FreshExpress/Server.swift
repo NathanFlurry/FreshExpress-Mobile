@@ -19,11 +19,13 @@ class ScheduleItem {
 	var id: Int
 	var startDate: Date
 	var endDate: Date
+	var stop: BusStop?
 	
 	init(serialized: [String: AnyObject]) throws {
 		id = try (serialized["Id"] as? Int).unwrap("Id")
 		startDate = Date(timeIntervalSince1970: try (serialized["StartDate"] as? Double).unwrap("StartDate"))
 		endDate = Date(timeIntervalSince1970: try (serialized["EndDate"] as? Double).unwrap("EndDate"))
+		stop = serialized["Stop"] != nil ? try BusStop(serialized: (serialized["Stop"] as? [String: AnyObject]).unwrap("Stop")) : nil
 	}
 }
 
@@ -32,7 +34,16 @@ class FoodItem {
 }
 
 class BusStop {
+	var id: Int
+	var schedule: [ScheduleItem]?
+	var locationName: String
+	var address: String
 	
+	init(serialized: [String: AnyObject]) throws {
+		id = try (serialized["Id"] as? Int).unwrap("Id")
+		locationName = try (serialized["LocationName"] as? String).unwrap("LocationName")
+		address = try (serialized["Address"] as? String).unwrap("Address")
+	}
 }
 
 enum ServerError: ErrorProtocol {
