@@ -15,6 +15,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
 	@IBOutlet weak var mapView: MKMapView!
 
 	var items: [BusStop] = []
+	var mapAnnotations: [MKAnnotation] = []
 	
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,15 +61,21 @@ class MapViewController: UIViewController, MKMapViewDelegate {
 			}
 			
 			// Get the MKPlacemark
-			let mkPlacemark = MKPlacemark(placemark: clPlacemark)
+			let placemark = MKPlacemark(placemark: clPlacemark)
 			
 			// Create the actual placemark
-			let placemark = MKPointAnnotation()
-			placemark.coordinate = mkPlacemark.coordinate
-			placemark.title = item.locationName
+			let annotation = MKPointAnnotation()
+			annotation.coordinate = placemark.coordinate
+			annotation.title = item.locationName
 			
 			// Add the annotation
-			self.mapView.addAnnotation(placemark)
+			self.mapView.addAnnotation(annotation)
+			self.mapAnnotations.append(annotation)
+			
+			// Check if all pins have been laid
+			if self.mapAnnotations.count == self.items.count {
+				self.mapView.showAnnotations(self.mapAnnotations, animated: true)
+			}
 		}
 	}
 	
