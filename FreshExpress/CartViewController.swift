@@ -74,7 +74,7 @@ class CartViewController: UITableViewController {
 			let item = cartItems[indexPath.row]
 			
 			// Set the data
-			cell.textLabel?.text = "1 pound of " + item.name
+			cell.textLabel?.text = "A pound of " + item.name
 			cell.detailTextLabel?.text = String(format: "$%.2f", item.cost)
 			
 			return cell
