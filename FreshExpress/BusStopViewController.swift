@@ -120,6 +120,11 @@ class BusStopViewController: UIViewController, CLLocationManagerDelegate, MKMapV
 	func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
 		userLocation = locations[0]
 		updateDistance()
+		print("updated locations \(locations)")
+	}
+	
+	func locationManager(_ manager: CLLocationManager, didFailWithError error: NSError) {
+		print("Location manager error \(error)")
 	}
 	
 	// MARK: UI events

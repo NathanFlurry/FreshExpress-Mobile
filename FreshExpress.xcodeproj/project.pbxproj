@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF069D831D43CEF00056E239 /* Phoenix.gpx in Resources */ = {isa = PBXBuildFile; fileRef = BF069D821D43CEF00056E239 /* Phoenix.gpx */; };
 		BF2219E61D427F0A00FA40A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2219E51D427F0A00FA40A3 /* AppDelegate.swift */; };
 		BF2219EB1D427F0A00FA40A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF2219E91D427F0A00FA40A3 /* Main.storyboard */; };
 		BF2219ED1D427F0A00FA40A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF2219EC1D427F0A00FA40A3 /* Assets.xcassets */; };
@@ -102,6 +103,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		BF069D821D43CEF00056E239 /* Phoenix.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Phoenix.gpx; sourceTree = "<group>"; };
 		BF2219E21D427F0A00FA40A3 /* FreshExpress.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FreshExpress.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF2219E51D427F0A00FA40A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF2219EA1D427F0A00FA40A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 				BF2219EC1D427F0A00FA40A3 /* Assets.xcassets */,
 				BF2219EE1D427F0A00FA40A3 /* LaunchScreen.storyboard */,
 				BF2219F11D427F0A00FA40A3 /* Info.plist */,
+				BF069D821D43CEF00056E239 /* Phoenix.gpx */,
 			);
 			path = FreshExpress;
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF069D831D43CEF00056E239 /* Phoenix.gpx in Resources */,
 				BF81D4661D43AF70003BBFD4 /* FreshExpressScene.sks in Resources */,
 				BF2427191D43B1800057DA4D /* spark.png in Resources */,
 				BF2219F01D427F0A00FA40A3 /* LaunchScreen.storyboard in Resources */,
