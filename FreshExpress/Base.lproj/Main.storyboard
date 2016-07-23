@@ -225,7 +225,7 @@
             </objects>
             <point key="canvasLocation" x="223.19999999999999" y="734.48275862068976"/>
         </scene>
-        <!--Cart-->
+        <!--ExpressBag Cart-->
         <scene sceneID="h4V-VY-kee">
             <objects>
                 <tableViewController id="wdC-h6-v1a" customClass="CartViewController" customModule="FreshExpress" customModuleProvider="target" sceneMemberID="viewController">
@@ -300,7 +300,7 @@
                             <outlet property="delegate" destination="wdC-h6-v1a" id="RkT-5l-5xV"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Cart" id="hYs-N1-amJ">
+                    <navigationItem key="navigationItem" title="ExpressBag Cart" id="hYs-N1-amJ">
                         <barButtonItem key="backBarButtonItem" title="Cart" id="ybS-ZS-2xe"/>
                     </navigationItem>
                 </tableViewController>

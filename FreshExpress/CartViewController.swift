@@ -110,7 +110,7 @@ class CartViewController: UITableViewController {
 	}
 	
 	func checkoutTapped(cell: CartCheckoutCell) {
-		let alertController = UIAlertController(title: "Order Placed", message: "Please pick up your order at the nearest location.", preferredStyle: .alert)
+		let alertController = UIAlertController(title: "ExpressBag Order Placed", message: "Please pick up your ExpressBag at the nearest location.", preferredStyle: .alert)
 		alertController.addAction(
 			UIAlertAction(title: "OK", style: .cancel) { alert in
 				// Clear the cart
