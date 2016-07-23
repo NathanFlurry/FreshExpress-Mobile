@@ -17,6 +17,8 @@ class MapViewController: UIViewController, MKMapViewDelegate {
 	var items: [BusStop] = []
 	var mapAnnotations: [MKAnnotation] = []
 	
+	var selectedId = -1
+	
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -67,6 +69,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
 			let annotation = MKPointAnnotation()
 			annotation.coordinate = placemark.coordinate
 			annotation.title = item.locationName
+			annotation.subtitle = item.address
 			
 			// Add the annotation
 			self.mapView.addAnnotation(annotation)
@@ -79,6 +82,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
 		}
 	}
 	
+	// MARK: Map view
 	func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
 		// Create the annotation
 		let annotation = // Dequeue or create new annotation view
@@ -100,11 +104,30 @@ class MapViewController: UIViewController, MKMapViewDelegate {
 	}
 	
 	func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
-		print("Tapped!")
+		guard let annotationTitle = view.annotation?.title else {
+			print("No annotation.")
+			return
+		}
+		
+		// Find the item with the same name to get its id
+		for item in items { // TODO: Find a better way of uniquely identifying pins
+			if annotationTitle == item.locationName {
+				selectedId = item.id
+				performSegue(withIdentifier: "BusStop", sender: self)
+				return
+			}
+		}
+		
+		// If we're here, there was no valid pin
+		print("Invalid pin selected.")
 	}
 	
 	// MARK: UI events
-	@IBAction func didRefresh(_ sender: UIRefreshControl) {
-		loadItems()
+	override func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) {
+		if segue.identifier == "BusStop" {
+			let vc = segue.destinationViewController as! BusStopViewController
+			vc.loadStop(id: selectedId)
+			selectedId = -1
+		}
 	}
 }

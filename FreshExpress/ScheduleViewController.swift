@@ -27,6 +27,8 @@ class ScheduleViewController: UITableViewController {
 	
 	var items: [[ScheduleItem]] = []
 	
+	var selectedId = -1
+	
 	// MARK: View controller lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,11 +76,6 @@ class ScheduleViewController: UITableViewController {
 		self.tableView.reloadData()
 	}
 	
-	// MARK: UI events
-	@IBAction func didRefresh(_ sender: UIRefreshControl) {
-		loadItems()
-	}
-	
 	// MARK: Table view
 	override func numberOfSections(in tableView: UITableView) -> Int {
 		return items.count
@@ -109,9 +106,27 @@ class ScheduleViewController: UITableViewController {
 		let end = timeFormatter.string(from: item.endDate)
 		
 		// Update the cell
-		cell.textLabel?.text = "\(stop.locationName) @ \(stop.address)" // TODO: Get the stop info
+		cell.textLabel?.text = stop.locationName // " @ \(stop.address)"
 		cell.detailTextLabel?.text = "From \(start) until \(end)"
 		
 		return cell
+	}
+	
+	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		selectedId = items[indexPath.section][indexPath.row].id
+		performSegue(withIdentifier: "BusStop", sender: self)
+	}
+	
+	// MARK: UI events
+	@IBAction func didRefresh(_ sender: UIRefreshControl) {
+		loadItems()
+	}
+	
+	override func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) {
+		if segue.identifier == "BusStop" {
+			let vc = segue.destinationViewController as! BusStopViewController
+			vc.loadStop(id: selectedId)
+			selectedId = -1
+		}
 	}
 }
