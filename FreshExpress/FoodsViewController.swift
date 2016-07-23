@@ -13,6 +13,7 @@ class FoodTableViewCell: UITableViewCell {
 	
 	@IBOutlet weak var nameLabel: UILabel!
 	@IBOutlet weak var priceLabel: UILabel!
+	@IBOutlet weak var descriptionLabel: UILabel!
 	@IBOutlet weak var addButton: RoundButton!
 	
 	@IBAction func addPressed(_ sender: AnyObject) {
@@ -29,6 +30,11 @@ class FoodsViewController: UITableViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
+		// Automatically size rows
+		tableView.rowHeight = UITableViewAutomaticDimension
+		tableView.estimatedRowHeight = 118
+		
+		// Load the items
 		loadItems()
 	}
 	
@@ -76,7 +82,8 @@ class FoodsViewController: UITableViewController {
 		
 		// Update the cell
 		cell.nameLabel.text = item.name
-		cell.priceLabel.text = String(format: "$%.2f", item.cost)
+		cell.priceLabel.text = String(format: "$%.2f/lb", item.cost)
+		cell.descriptionLabel.text = item.description
 		
 		// Add an event
 		cell.handler = addPressed

@@ -32,11 +32,13 @@ class ScheduleItem {
 class FoodItem {
 	var id: Int
 	var name: String
+	var description: String
 	var cost: Float
 	
 	init(serialized: [String: AnyObject]) throws {
 		id = try (serialized["Id"] as? Int).unwrap("Id")
 		name = try (serialized["Name"] as? String).unwrap("Name")
+		description = try (serialized["Description"] as? String).unwrap("Description")
 		cost = try (serialized["Cost"] as? Float).unwrap("Cost")
 	}
 }

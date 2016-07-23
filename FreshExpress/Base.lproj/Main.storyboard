@@ -138,16 +138,16 @@
         <scene sceneID="BXk-0U-8PF">
             <objects>
                 <tableViewController id="Ccx-6P-sFX" userLabel="Foods" customClass="FoodsViewController" customModule="FreshExpress" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="86" sectionHeaderHeight="28" sectionFooterHeight="28" id="4kt-oL-gyO">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="105" sectionHeaderHeight="28" sectionFooterHeight="28" id="4kt-oL-gyO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="88" id="Lpx-47-mlS" customClass="FoodTableViewCell" customModule="FreshExpress" customModuleProvider="target">
-                                <frame key="frameInset" minY="92" width="375" height="88"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="118" id="Lpx-47-mlS" customClass="FoodTableViewCell" customModule="FreshExpress" customModuleProvider="target">
+                                <frame key="frameInset" minY="92" width="375" height="118"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Lpx-47-mlS" id="CQg-pk-Ig9">
-                                    <frame key="frameInset" width="375" height="87.5"/>
+                                    <frame key="frameInset" width="375" height="117.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TN3-Y0-uVa">
@@ -155,8 +155,8 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PBs-Ki-c2d">
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Description blah blah blah blah blah blah blah blah" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PBs-Ki-c2d" userLabel="Description">
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -177,22 +177,32 @@
                                             <color key="textColor" red="0.59215686274509804" green="0.7803921568627451" blue="0.45490196078431372" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q3P-ro-ZPP">
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="TN3-Y0-uVa" firstAttribute="top" secondItem="CQg-pk-Ig9" secondAttribute="topMargin" id="77T-k5-0tV"/>
                                         <constraint firstItem="7Pf-e4-r9o" firstAttribute="leading" secondItem="CQg-pk-Ig9" secondAttribute="leadingMargin" id="8jh-rZ-TJ8"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="vfv-lU-BS2" secondAttribute="trailing" id="Bio-oI-b3z"/>
+                                        <constraint firstItem="vfv-lU-BS2" firstAttribute="leading" secondItem="PBs-Ki-c2d" secondAttribute="trailing" constant="8" id="NRy-i1-Gha"/>
+                                        <constraint firstItem="q3P-ro-ZPP" firstAttribute="leading" secondItem="TN3-Y0-uVa" secondAttribute="trailing" constant="8" id="T6F-4X-ThY"/>
                                         <constraint firstItem="PBs-Ki-c2d" firstAttribute="leading" secondItem="CQg-pk-Ig9" secondAttribute="leadingMargin" id="W1l-UK-B2v"/>
                                         <constraint firstItem="TN3-Y0-uVa" firstAttribute="leading" secondItem="CQg-pk-Ig9" secondAttribute="leadingMargin" id="Yoq-cW-P8J"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="7Pf-e4-r9o" secondAttribute="bottom" id="c8z-Cf-VCo"/>
+                                        <constraint firstItem="q3P-ro-ZPP" firstAttribute="centerY" secondItem="TN3-Y0-uVa" secondAttribute="centerY" id="ds7-43-3l0"/>
                                         <constraint firstItem="PBs-Ki-c2d" firstAttribute="top" secondItem="TN3-Y0-uVa" secondAttribute="bottom" constant="8" id="gxF-7j-1Ss"/>
                                         <constraint firstItem="vfv-lU-BS2" firstAttribute="centerY" secondItem="CQg-pk-Ig9" secondAttribute="centerY" id="mMg-S1-gbA"/>
+                                        <constraint firstItem="7Pf-e4-r9o" firstAttribute="top" secondItem="PBs-Ki-c2d" secondAttribute="bottom" constant="8" id="xyX-L5-9zw"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="addButton" destination="vfv-lU-BS2" id="Q2x-6U-VCa"/>
+                                    <outlet property="descriptionLabel" destination="PBs-Ki-c2d" id="hzc-zg-AQY"/>
                                     <outlet property="nameLabel" destination="TN3-Y0-uVa" id="Joc-eP-Wud"/>
-                                    <outlet property="priceLabel" destination="PBs-Ki-c2d" id="eTu-oa-948"/>
+                                    <outlet property="priceLabel" destination="q3P-ro-ZPP" id="OpZ-cz-7Yr"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
