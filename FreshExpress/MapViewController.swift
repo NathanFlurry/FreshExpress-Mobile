@@ -77,7 +77,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
 		let annotation = // Dequeue or create new annotation view
 			mapView.dequeueReusableAnnotationView(withIdentifier: pinReuseId) as? MKPinAnnotationView ??
 			MKPinAnnotationView(annotation: annotation, reuseIdentifier: pinReuseId)
-		annotation.pinTintColor = MKPinAnnotationView.greenPinColor()
+		annotation.pinTintColor = ThemeColor // MKPinAnnotationView.greenPinColor()
 		annotation.canShowCallout = true
 		
 		// Create the accessory
