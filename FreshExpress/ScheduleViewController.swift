@@ -106,7 +106,7 @@ class ScheduleViewController: UITableViewController {
 		let end = timeFormatter.string(from: item.endDate)
 		
 		// Update the cell
-		cell.textLabel?.text = stop.locationName // " @ \(stop.address)"
+		cell.textLabel?.text = stop.locationName
 		cell.detailTextLabel?.text = "From \(start) until \(end)"
 		
 		return cell

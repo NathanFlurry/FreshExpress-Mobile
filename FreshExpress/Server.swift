@@ -111,4 +111,31 @@ class Server {
 			}
 		}
 	}
+	
+	static func getStop(id: Int, handler: ServerCallback<BusStop>) {
+		request(.GET, "\(serverAddress)/stop/\(id)").responseJSON { response in
+			do {
+				switch response.result {
+				case .success(let value):
+					// Cast to JSON
+					guard let json = value as? [String: AnyObject] else {
+						throw ServerError.invalidData(value)
+					}
+					
+					// Get the items
+					guard let item = json["stop"] as? [String: AnyObject] else {
+						throw ServerError.missingValue("stop")
+					}
+					
+					// Map the schedule and call the handler
+					let stop = try BusStop(serialized: item)
+					handler(.success(stop))
+				case .failure(let error):
+					throw error
+				}
+			} catch {
+				handler(.error(error))
+			}
+		}
+	}
 }

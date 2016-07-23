@@ -65,7 +65,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
 			// Get the MKPlacemark
 			let placemark = MKPlacemark(placemark: clPlacemark)
 			
-			// Create the actual placemark
+			// Create the annotation
 			let annotation = MKPointAnnotation()
 			annotation.coordinate = placemark.coordinate
 			annotation.title = item.locationName

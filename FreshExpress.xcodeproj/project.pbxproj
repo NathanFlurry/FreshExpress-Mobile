@@ -18,6 +18,7 @@
 		BF2C3D061D42C68200584921 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF2C3CF91D42C67B00584921 /* Alamofire.framework */; };
 		BF2C3D071D42C68200584921 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BF2C3CF91D42C67B00584921 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BF2C3D0C1D42CA1E00584921 /* Magic.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2C3D0B1D42CA1E00584921 /* Magic.swift */; };
+		BF86B2661D43577C000A3926 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF86B2651D43577C000A3926 /* RoundButton.swift */; };
 		BFE582A91D432BE500720FC1 /* BusStopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE582A81D432BE500720FC1 /* BusStopViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -107,6 +108,7 @@
 		BF2C3CEB1D42C56600584921 /* Server.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
 		BF2C3CEE1D42C67B00584921 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "Alamofire-swift3/Alamofire.xcodeproj"; sourceTree = "<group>"; };
 		BF2C3D0B1D42CA1E00584921 /* Magic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Magic.swift; sourceTree = "<group>"; };
+		BF86B2651D43577C000A3926 /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		BFE582A81D432BE500720FC1 /* BusStopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusStopViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -146,6 +148,7 @@
 				BF2C3CEB1D42C56600584921 /* Server.swift */,
 				BF2C3D0B1D42CA1E00584921 /* Magic.swift */,
 				BF2C3CED1D42C56D00584921 /* View Controllers */,
+				BF86B26D1D43577F000A3926 /* Views */,
 				BF2219E91D427F0A00FA40A3 /* Main.storyboard */,
 				BF2219EC1D427F0A00FA40A3 /* Assets.xcassets */,
 				BF2219EE1D427F0A00FA40A3 /* LaunchScreen.storyboard */,
@@ -177,6 +180,14 @@
 				BF2C3D051D42C67B00584921 /* Alamofire.framework */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		BF86B26D1D43577F000A3926 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BF86B2651D43577C000A3926 /* RoundButton.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -313,6 +324,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF86B2661D43577C000A3926 /* RoundButton.swift in Sources */,
 				BF2C3CEC1D42C56600584921 /* Server.swift in Sources */,
 				BFE582A91D432BE500720FC1 /* BusStopViewController.swift in Sources */,
 				BF2C3D0C1D42CA1E00584921 /* Magic.swift in Sources */,
