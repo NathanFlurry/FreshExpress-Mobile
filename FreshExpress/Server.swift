@@ -66,6 +66,7 @@ class Server {
 //		return dateFormatter
 //	}()
 	
+	// MARK: Endpoints
 	static func getSchedule(handler: ServerCallback<[ScheduleItem]>) {
 		request(.GET, "\(serverAddress)/schedule").responseJSON { response in
 			do {
@@ -172,5 +173,23 @@ class Server {
 				handler(.error(error))
 			}
 		}
+	}
+	
+	// MARK: Cart
+	static var cartItems: [FoodItem] = []
+	static var cartHandler: (() -> Void)?
+	
+	static func add(item: FoodItem) {
+		cartItems += [ item ]
+		
+		cartHandler?()
+	}
+	
+	static func getCartTotal() -> Float {
+		var total: Float = 0
+		for item in cartItems {
+			total += item.cost
+		}
+		return total
 	}
 }

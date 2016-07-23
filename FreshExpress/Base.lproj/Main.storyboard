@@ -138,34 +138,62 @@
         <scene sceneID="BXk-0U-8PF">
             <objects>
                 <tableViewController id="Ccx-6P-sFX" userLabel="Foods" customClass="FoodsViewController" customModule="FreshExpress" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="4kt-oL-gyO">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="86" sectionHeaderHeight="28" sectionFooterHeight="28" id="4kt-oL-gyO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="8B4-Vb-w6b" detailTextLabel="WPz-Ou-K0B" style="IBUITableViewCellStyleSubtitle" id="Lpx-47-mlS">
-                                <frame key="frameInset" minY="92" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="88" id="Lpx-47-mlS" customClass="FoodTableViewCell" customModule="FreshExpress" customModuleProvider="target">
+                                <frame key="frameInset" minY="92" width="375" height="88"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Lpx-47-mlS" id="CQg-pk-Ig9">
-                                    <frame key="frameInset" width="375" height="43.5"/>
+                                    <frame key="frameInset" width="375" height="87.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Food Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8B4-Vb-w6b">
-                                            <frame key="frameInset" minX="15" minY="5" width="88.5" height="20.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TN3-Y0-uVa">
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="WPz-Ou-K0B">
-                                            <frame key="frameInset" minX="15" minY="25.5" width="29" height="14.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PBs-Ki-c2d">
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                             <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vfv-lU-BS2" customClass="RoundButton" customModule="FreshExpress" customModuleProvider="target">
+                                            <color key="backgroundColor" red="0.10588235294117647" green="0.6705882352941176" blue="0.6470588235294118" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="54" id="ZWw-8w-IqS"/>
+                                                <constraint firstAttribute="width" secondItem="vfv-lU-BS2" secondAttribute="height" multiplier="1:1" id="lmJ-Gb-X5b"/>
+                                            </constraints>
+                                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <state key="normal" image="Plus"/>
+                                            <connections>
+                                                <action selector="addPressed:" destination="Lpx-47-mlS" eventType="touchUpInside" id="EaJ-9e-bKr"/>
+                                            </connections>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="In Stock" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Pf-e4-r9o">
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                            <color key="textColor" red="0.59215686274509804" green="0.7803921568627451" blue="0.45490196078431372" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="TN3-Y0-uVa" firstAttribute="top" secondItem="CQg-pk-Ig9" secondAttribute="topMargin" id="77T-k5-0tV"/>
+                                        <constraint firstItem="7Pf-e4-r9o" firstAttribute="leading" secondItem="CQg-pk-Ig9" secondAttribute="leadingMargin" id="8jh-rZ-TJ8"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="vfv-lU-BS2" secondAttribute="trailing" id="Bio-oI-b3z"/>
+                                        <constraint firstItem="PBs-Ki-c2d" firstAttribute="leading" secondItem="CQg-pk-Ig9" secondAttribute="leadingMargin" id="W1l-UK-B2v"/>
+                                        <constraint firstItem="TN3-Y0-uVa" firstAttribute="leading" secondItem="CQg-pk-Ig9" secondAttribute="leadingMargin" id="Yoq-cW-P8J"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="7Pf-e4-r9o" secondAttribute="bottom" id="c8z-Cf-VCo"/>
+                                        <constraint firstItem="PBs-Ki-c2d" firstAttribute="top" secondItem="TN3-Y0-uVa" secondAttribute="bottom" constant="8" id="gxF-7j-1Ss"/>
+                                        <constraint firstItem="vfv-lU-BS2" firstAttribute="centerY" secondItem="CQg-pk-Ig9" secondAttribute="centerY" id="mMg-S1-gbA"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="addButton" destination="vfv-lU-BS2" id="Q2x-6U-VCa"/>
+                                    <outlet property="nameLabel" destination="TN3-Y0-uVa" id="Joc-eP-Wud"/>
+                                    <outlet property="priceLabel" destination="PBs-Ki-c2d" id="eTu-oa-948"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -176,10 +204,116 @@
                     <navigationItem key="navigationItem" title="Foods" id="vtz-4Y-Vnj">
                         <barButtonItem key="backBarButtonItem" title="Foods" id="81P-UW-1Z7"/>
                     </navigationItem>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="ELQ-XW-0Ov">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <connections>
+                            <action selector="didRefresh:" destination="Ccx-6P-sFX" eventType="valueChanged" id="hHW-gF-1Rs"/>
+                        </connections>
+                    </refreshControl>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="36D-xx-cw4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="223.19999999999999" y="734.48275862068976"/>
+        </scene>
+        <!--Cart-->
+        <scene sceneID="h4V-VY-kee">
+            <objects>
+                <tableViewController id="wdC-h6-v1a" customClass="CartViewController" customModule="FreshExpress" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="V99-Ab-W9R">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ItemCell" textLabel="oSp-AC-K4m" detailTextLabel="Hfc-r0-aCg" style="IBUITableViewCellStyleValue1" id="Ce3-QS-ggR">
+                                <frame key="frameInset" minY="92" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ce3-QS-ggR" id="Jhm-xr-jvj">
+                                    <frame key="frameInset" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Food" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="oSp-AC-K4m">
+                                            <frame key="frameInset" minX="15" minY="12" width="39" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Price" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Hfc-r0-aCg">
+                                            <frame key="frameInset" minX="321" minY="12" width="39" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CheckoutCell" rowHeight="68" id="GIm-Mj-Miy" customClass="CartCheckoutCell" customModule="FreshExpress" customModuleProvider="target">
+                                <frame key="frameInset" minY="136" width="375" height="68"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GIm-Mj-Miy" id="v41-aH-JMd">
+                                    <frame key="frameInset" width="375" height="67.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3mR-c8-UKL">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="43.5" id="2sv-mF-1aT"/>
+                                            </constraints>
+                                            <state key="normal" title="Checkout"/>
+                                            <connections>
+                                                <action selector="checkoutTapped:" destination="GIm-Mj-Miy" eventType="touchUpInside" id="eKh-7W-sLw"/>
+                                            </connections>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total: $10.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nsm-us-ggb">
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="nsm-us-ggb" firstAttribute="top" secondItem="v41-aH-JMd" secondAttribute="top" constant="8" id="CrZ-1c-sK8"/>
+                                        <constraint firstItem="nsm-us-ggb" firstAttribute="centerX" secondItem="v41-aH-JMd" secondAttribute="centerX" id="ICo-HA-qeV"/>
+                                        <constraint firstAttribute="bottom" secondItem="3mR-c8-UKL" secondAttribute="bottom" id="MWi-Xk-tCh"/>
+                                        <constraint firstAttribute="trailing" secondItem="3mR-c8-UKL" secondAttribute="trailing" id="eZk-4B-Pz9"/>
+                                        <constraint firstItem="3mR-c8-UKL" firstAttribute="top" secondItem="v41-aH-JMd" secondAttribute="top" constant="24" id="huW-cD-3ku"/>
+                                        <constraint firstItem="3mR-c8-UKL" firstAttribute="leading" secondItem="v41-aH-JMd" secondAttribute="leading" id="yJr-5e-Anm"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="checkoutButton" destination="3mR-c8-UKL" id="b7Y-Oq-5Ly"/>
+                                    <outlet property="totalLabel" destination="nsm-us-ggb" id="fpP-Fb-s4U"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="wdC-h6-v1a" id="VYV-de-HIj"/>
+                            <outlet property="delegate" destination="wdC-h6-v1a" id="RkT-5l-5xV"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Cart" id="hYs-N1-amJ">
+                        <barButtonItem key="backBarButtonItem" title="Cart" id="ybS-ZS-2xe"/>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AR4-bw-GyN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="234" y="1431"/>
+        </scene>
+        <!--Cart-->
+        <scene sceneID="2Q9-AR-tYj">
+            <objects>
+                <navigationController id="rvM-Df-oxn" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Cart" image="Cart" id="d1G-9k-HFg"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ny0-f3-jHj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="wdC-h6-v1a" kind="relationship" relationship="rootViewController" id="yUN-fS-Bhn"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QoH-EQ-uEn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-716" y="1431"/>
         </scene>
         <!--Map-->
         <scene sceneID="d0M-Sy-k0Q">
@@ -193,7 +327,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" showsScale="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Esk-px-s4h"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" showsUserLocation="YES" showsScale="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Esk-px-s4h">
+                                <frame key="frameInset" width="375"/>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -203,7 +339,7 @@
                             <constraint firstItem="Esk-px-s4h" firstAttribute="top" secondItem="k0c-7O-8fe" secondAttribute="top" id="jk4-Cb-cBO"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Bus Stop Map" id="ua7-iW-tCl">
+                    <navigationItem key="navigationItem" title="FreshExpress" id="ua7-iW-tCl">
                         <barButtonItem key="backBarButtonItem" title="Map" id="iSt-0s-M1g"/>
                     </navigationItem>
                     <connections>
@@ -228,6 +364,7 @@
                         <segue destination="t3C-xD-JvM" kind="relationship" relationship="viewControllers" id="N2b-ao-R4G"/>
                         <segue destination="IHi-6l-eeY" kind="relationship" relationship="viewControllers" id="Pbn-Iz-8nL"/>
                         <segue destination="L4u-0T-bRu" kind="relationship" relationship="viewControllers" id="wK5-Wh-tWZ"/>
+                        <segue destination="rvM-Df-oxn" kind="relationship" relationship="viewControllers" id="vfy-XH-aJj"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cYC-1h-653" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -294,8 +431,10 @@
     </scenes>
     <resources>
         <image name="Apple" width="50" height="50"/>
+        <image name="Cart" width="50" height="50"/>
         <image name="Directions" width="40" height="40"/>
         <image name="Map" width="50" height="50"/>
+        <image name="Plus" width="40" height="40"/>
         <image name="Schedule" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>

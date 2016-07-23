@@ -11,6 +11,7 @@
 		BF2219EB1D427F0A00FA40A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF2219E91D427F0A00FA40A3 /* Main.storyboard */; };
 		BF2219ED1D427F0A00FA40A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF2219EC1D427F0A00FA40A3 /* Assets.xcassets */; };
 		BF2219F01D427F0A00FA40A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF2219EE1D427F0A00FA40A3 /* LaunchScreen.storyboard */; };
+		BF2430641D43875F00FA4CDC /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2430631D43875F00FA4CDC /* CartViewController.swift */; };
 		BF2C3CE61D42C1F300584921 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2C3CE51D42C1F300584921 /* MapViewController.swift */; };
 		BF2C3CE81D42C1FB00584921 /* FoodsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2C3CE71D42C1FB00584921 /* FoodsViewController.swift */; };
 		BF2C3CEA1D42C21800584921 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2C3CE91D42C21800584921 /* ScheduleViewController.swift */; };
@@ -102,6 +103,7 @@
 		BF2219EC1D427F0A00FA40A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BF2219EF1D427F0A00FA40A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BF2219F11D427F0A00FA40A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF2430631D43875F00FA4CDC /* CartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		BF2C3CE51D42C1F300584921 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		BF2C3CE71D42C1FB00584921 /* FoodsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodsViewController.swift; sourceTree = "<group>"; };
 		BF2C3CE91D42C21800584921 /* ScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 				BF2C3CE91D42C21800584921 /* ScheduleViewController.swift */,
 				BF2C3CE71D42C1FB00584921 /* FoodsViewController.swift */,
 				BFE582A81D432BE500720FC1 /* BusStopViewController.swift */,
+				BF2430631D43875F00FA4CDC /* CartViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 				BF2C3CE81D42C1FB00584921 /* FoodsViewController.swift in Sources */,
 				BF2219E61D427F0A00FA40A3 /* AppDelegate.swift in Sources */,
 				BF2C3CE61D42C1F300584921 /* MapViewController.swift in Sources */,
+				BF2430641D43875F00FA4CDC /* CartViewController.swift in Sources */,
 				BF2C3CEA1D42C21800584921 /* ScheduleViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
